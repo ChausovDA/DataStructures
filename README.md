@@ -1,2 +1,2 @@
 # DataStructures
-Implementation of data structures in Python
+Реализация структур данных на языке Python
