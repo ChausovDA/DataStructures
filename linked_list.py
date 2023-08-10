@@ -1,3 +1,6 @@
+"""Реализация связанного списка"""
+
+
 class Node:
     """Объекты связанного списка"""
     def __init__(self, data):
@@ -49,13 +52,15 @@ class LinkedList:
             if index == 0:
                 self.push_front(new_node)
                 return
-            if count + 1 == index:
-                node_after_current = current_node.get_next()
-                current_node.set_next(new_node)
-                new_node.set_next(node_after_current)
-                return
+
             count += 1
             current_node = current_node.get_next()
+
+            if count + 1 == index:
+                right = current_node.get_next()
+                current_node.set_next(new_node)
+                new_node.set_next(right)
+                return
 
     def erase(self, index):
         """Удаление элемента по индексу"""
@@ -65,13 +70,15 @@ class LinkedList:
             if index == 0:
                 self.pop_front()
                 return
-            if count + 1 == index:
-                node_to_remove = current_node.get_next()
-                node_after_remove = node_to_remove.get_next()
-                current_node.set_next(node_after_remove)
-                return
+
             count += 1
             current_node = current_node.get_next()
+
+            if count + 1 == index:
+                node_to_remove = current_node.get_next()
+                left = node_to_remove.get_next()
+                current_node.set_next(left)
+                return
 
     def pop_front(self):
         """Удаление первого элемента списка"""
