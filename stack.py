@@ -13,15 +13,15 @@ class Node:
         return self.data
 
     def get_next(self):
-        """Возвращает ссылку на следующий объект списка"""
+        """Возвращает ссылку на следующий объект"""
         return self.ref_next
 
     def set_next(self, new_node):
-        """Изменение ссылки на следующий объект списка"""
+        """Изменение ссылки на следующий объект"""
         self.ref_next = new_node
 
     def set_prev(self, new_node):
-        """Изменение ссылки на предыдущий объект списка"""
+        """Изменение ссылки на предыдущий объект"""
         self.ref_prev = new_node
 
 
